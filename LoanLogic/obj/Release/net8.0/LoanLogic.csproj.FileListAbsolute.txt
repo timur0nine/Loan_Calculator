@@ -1,0 +1,12 @@
+C:\Users\fatih\source\repos\LoanLogic\bin\Release\net8.0\LoanLogic.deps.json
+C:\Users\fatih\source\repos\LoanLogic\bin\Release\net8.0\LoanLogic.dll
+C:\Users\fatih\source\repos\LoanLogic\bin\Release\net8.0\LoanLogic.pdb
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\LoanLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\LoanLogic.AssemblyInfoInputs.cache
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\LoanLogic.AssemblyInfo.cs
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\LoanLogic.csproj.CoreCompileInputs.cache
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\LoanLogic.dll
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\refint\LoanLogic.dll
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\LoanLogic.pdb
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\ref\LoanLogic.dll
+C:\Users\fatih\source\repos\LoanLogic\obj\Release\net8.0\LoanLogic.csproj.AssemblyReference.cache
