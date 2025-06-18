@@ -10,7 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="LoanLogic\**" />
+    <Compile Remove="LoanTests\**" />
+    <EmbeddedResource Remove="LoanLogic\**" />
+    <EmbeddedResource Remove="LoanTests\**" />
+    <None Remove="LoanLogic\**" />
+    <None Remove="LoanTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\LoanLogic\LoanLogic.csproj" />
+    <ProjectReference Include="LoanLogic\LoanLogic.csproj" />
   </ItemGroup>
 
 </Project>

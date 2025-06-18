@@ -5,14 +5,14 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ипотечный калькулятор", "Ипотечный калькулятор.csproj", "{887EF9A6-267C-418F-ADE1-3F411CBEB0CE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanLogic", "..\LoanLogic\LoanLogic.csproj", "{74A0F41F-1D87-4DBB-9989-B27DEA1BA313}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanTests", "..\LoanTests\LoanTests.csproj", "{24B7CE8F-4410-447A-B496-2A956CC81DCE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{009D5FA7-1538-4BD5-9398-A5701DEACFC0}"
 	ProjectSection(SolutionItems) = preProject
 		bin\Debug\net8.0-windows\CalculatorHelp.chm = bin\Debug\net8.0-windows\CalculatorHelp.chm
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanLogic", "LoanLogic\LoanLogic.csproj", "{6E89C233-3CA5-4FF4-8132-8184790A5536}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanTests", "LoanTests\LoanTests.csproj", "{50257F91-F995-4E40-B455-C638E6654084}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,14 +24,14 @@ Global
 		{887EF9A6-267C-418F-ADE1-3F411CBEB0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{887EF9A6-267C-418F-ADE1-3F411CBEB0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{887EF9A6-267C-418F-ADE1-3F411CBEB0CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74A0F41F-1D87-4DBB-9989-B27DEA1BA313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74A0F41F-1D87-4DBB-9989-B27DEA1BA313}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74A0F41F-1D87-4DBB-9989-B27DEA1BA313}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74A0F41F-1D87-4DBB-9989-B27DEA1BA313}.Release|Any CPU.Build.0 = Release|Any CPU
-		{24B7CE8F-4410-447A-B496-2A956CC81DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24B7CE8F-4410-447A-B496-2A956CC81DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24B7CE8F-4410-447A-B496-2A956CC81DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24B7CE8F-4410-447A-B496-2A956CC81DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E89C233-3CA5-4FF4-8132-8184790A5536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E89C233-3CA5-4FF4-8132-8184790A5536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E89C233-3CA5-4FF4-8132-8184790A5536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E89C233-3CA5-4FF4-8132-8184790A5536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50257F91-F995-4E40-B455-C638E6654084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50257F91-F995-4E40-B455-C638E6654084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50257F91-F995-4E40-B455-C638E6654084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50257F91-F995-4E40-B455-C638E6654084}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
