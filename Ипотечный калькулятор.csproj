@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LoanLogic\LoanLogic.csproj" />
     <ProjectReference Include="LoanLogic\LoanLogic.csproj" />
   </ItemGroup>
 
