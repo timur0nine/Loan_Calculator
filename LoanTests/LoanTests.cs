@@ -53,8 +53,6 @@ namespace LoanTests
             loan.Calculate();
             var payouts = loan.Payouts;
 
-            LoanExcelExporter.Export(loan, "D:\\a.xlsx");
-
             Assert.AreEqual(12, payouts.GetLength(0));
             Assert.AreEqual(5, payouts.GetLength(1));
             Assert.IsTrue(payouts[0, 1] > payouts[11, 1]); // платёж уменьшается
