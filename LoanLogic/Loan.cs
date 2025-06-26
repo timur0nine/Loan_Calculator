@@ -116,11 +116,18 @@
                             if (remainingDebt < 0) remainingDebt = 0;
                         }
 
+                        if (remainingDebt < 0)
+                        {
+                            monthlyPayment += remainingDebt;
+                            remainingDebt = 0;
+                        }
                         payouts[month, 0] = month + 1;
                         payouts[month, 1] = monthlyPayment+ earlyPayment;
                         payouts[month, 2] = interestPart;
                         payouts[month, 3] = principalPart + earlyPayment;
                         payouts[month, 4] = remainingDebt;
+
+
 
                         if (remainingDebt <= 0)
                         {
@@ -148,7 +155,11 @@
                             remainingDebt -= earlyPayment;
                             if (remainingDebt < 0) remainingDebt = 0;
                         }
-
+                        if (remainingDebt < 0)
+                        {
+                            monthlyTotal += remainingDebt;
+                            remainingDebt = 0;
+                        }
                         payouts[month, 0] = month + 1;
                         payouts[month, 1] = monthlyTotal + earlyPayment;
                         payouts[month, 2] = interestPart;

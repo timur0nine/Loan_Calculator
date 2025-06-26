@@ -57,17 +57,14 @@ namespace Ипотечный_калькулятор
                 var interest = loan.Payouts[i, 2];
                 var remaining = loan.Payouts[i, 4];
 
-                if (remaining >0) LoanDataGridView.Rows.Add(month, payment, interest, remaining);
+                if (i>0 && loan.Payouts[i-1, 4] > 0) LoanDataGridView.Rows.Add(month, payment, interest, remaining);
 
                 totalPayment += payment;
                 totalInterest += interest;
             }
-
-            // Пустая строка перед итогами
             LoanDataGridView.Rows.Add();
 
-            // Итоговая строка
-            LoanDataGridView.Rows.Add("Итого:", totalPayment, totalInterest, "");
+            LoanDataGridView.Rows.Add(Form1.LabelTotal, totalPayment, totalInterest, "");
             LoanDataGridView.Rows[LoanDataGridView.Rows.Count - 2].DefaultCellStyle.Font = new Font(LoanDataGridView.Font, FontStyle.Bold);
         }
 
@@ -83,6 +80,11 @@ namespace Ипотечный_калькулятор
         }
 
         private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoanDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

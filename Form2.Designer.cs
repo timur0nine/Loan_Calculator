@@ -54,6 +54,7 @@
             LoanDataGridView.Name = "LoanDataGridView";
             LoanDataGridView.Size = new Size(543, 346);
             LoanDataGridView.TabIndex = 14;
+            LoanDataGridView.CellContentClick += LoanDataGridView_CellContentClick;
             // 
             // Month
             // 
@@ -76,7 +77,7 @@
             Payment.Resizable = DataGridViewTriState.True;
             Payment.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // interest
+            // Interest
             // 
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Format = "N2";
@@ -84,7 +85,7 @@
             Interest.DefaultCellStyle = dataGridViewCellStyle3;
             Interest.FillWeight = 150F;
             Interest.HeaderText = "Платеж по процентам";
-            Interest.Name = "interest";
+            Interest.Name = "Interest";
             Interest.ReadOnly = true;
             // 
             // Remaining
