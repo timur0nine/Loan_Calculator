@@ -5,26 +5,26 @@ namespace Ипотечный_калькулятор
 {
     public partial class Form1 : Form
     {
-        public string HeaderMonth = "Месяц";
-        public string HeaderPayment = "Сумма";
-        public string HeaderInterest = "Проценты";
-        public string HeaderPrincipal = "Тело";
-        public string HeaderRemaining = "Остаток";
-        public string LabelTotal = "Итого";
-        public string ButtonSaveText = "Сохранить";
-        public string ButtonBackText = "Назад";
-        public string Form2Title = "График платежей";
+        public static string HeaderMonth = "Месяц";
+        public static string HeaderPayment = "Сумма";
+        public static string HeaderInterest = "Проценты";
+        public static string HeaderPrincipal = "Тело";
+        public static string HeaderRemaining = "Остаток";
+        public static string LabelTotal = "Итого";
+        public static string ButtonSaveText = "Сохранить";
+        public static string ButtonBackText = "Назад";
+        public static string Form2Title = "График платежей";
 
-        public string msgInvalidAmount = "Некорректная сумма.";
-        public string msgInvalidTerm = "Некорректный срок.";
-        public string msgInvalidRate = "Процентная ставка должна быть от 0 до 100.";
-        public string msgNoTermType = "Не выбран тип срока.";
-        public string msgNoSchedule = "Не выбран тип графика платежей.";
-        public string msgInvalidInitial = "Первоначальный взнос должен быть неотрицательным и меньше суммы кредита.";
-        public string msgEarlyMonth = "Неверный номер месяца досрочного платежа в строке";
-        public string msgEarlyPayment = "Неверная сумма досрочного платежа в строке";
-        public string msgGeneralError = "Ошибка:";
-        public string msgCaption = "Ошибка ввода";
+        public static string msgInvalidAmount = "Некорректная сумма.";
+        public static string msgInvalidTerm = "Некорректный срок.";
+        public static string msgInvalidRate = "Процентная ставка должна быть от 0 до 100.";
+        public static string msgNoTermType = "Не выбран тип срока.";
+        public static string msgNoSchedule = "Не выбран тип графика платежей.";
+        public static string msgInvalidInitial = "Первоначальный взнос должен быть неотрицательным и меньше суммы кредита.";
+        public static string msgEarlyMonth = "Неверный номер месяца досрочного платежа в строке";
+        public static string msgEarlyPayment = "Неверная сумма досрочного платежа в строке";
+        public static string msgGeneralError = "Ошибка:";
+        public static string msgCaption = "Ошибка ввода";
 
 
         Loan loan = new Loan();
@@ -128,7 +128,7 @@ namespace Ипотечный_калькулятор
 
                 var loanAmount = amount - initialPayment;
 
-                currentLoan = new Loan(scheduleType, loanAmount, term, rate);
+                loan = new Loan(scheduleType, loanAmount, term, rate);
 
                 // Обработка досрочных платежей
                 for (int i = 0; i < earlyPaymentDataGridView.Rows.Count - 1; i++)
@@ -142,13 +142,12 @@ namespace Ипотечный_калькулятор
                         if (!decimal.TryParse(row.Cells[1].Value.ToString(), out decimal payment) || payment <= 0)
                             throw new ArgumentException(msgEarlyPayment+ $"{ i + 1}.");
 
-                        currentLoan.AddEarlyRepayment(month, payment);
+                        loan.AddEarlyRepayment(month, payment);
                     }
                 }
 
-                currentLoan.Calculate();
-
-                var resultForm = new Form2(currentLoan, this);
+                loan.Calculate();
+                var resultForm = new Form2(loan, this);
                 this.Hide();
                 resultForm.Show();
             }
@@ -194,11 +193,11 @@ namespace Ипотечный_калькулятор
                 case 0: // Русский
                     term.Text = "Срок";
                     termComboBox.Items.Clear();
-                    termComboBox.Items.AddRange(new object[] { "Лет", "Месяцев" });
+                    termComboBox.Items.AddRange(["Лет", "Месяцев"]);
                     amount.Text = "Сумма";
                     interest.Text = "Процентная ставка";
                     scheduleComboBox.Items.Clear();
-                    scheduleComboBox.Items.AddRange(new object[] { "Аннуитетные", "Дифференцированные" });
+                    scheduleComboBox.Items.AddRange(["Аннуитетные", "Дифференцированные"]);
                     initialPayment.Text = "Первоначальный взнос";
                     type.Text = "Тип платежей";
                     earlyPayments.Text = "Досрочные погашения";
@@ -210,9 +209,9 @@ namespace Ипотечный_калькулятор
 
                     HeaderMonth = "Месяц";
                     HeaderPayment = "Сумма";
-                    HeaderInterest = "Проценты";
-                    HeaderPrincipal = "Тело";
-                    HeaderRemaining = "Остаток";
+                    HeaderInterest = "Платеж по процентам";
+                    HeaderPrincipal = "Основной долг";
+                    HeaderRemaining = "Остаток долга";
                     LabelTotal = "Итого";
                     ButtonSaveText = "Сохранить";
                     ButtonBackText = "Назад";
@@ -233,11 +232,11 @@ namespace Ипотечный_калькулятор
                 case 1: // English
                     term.Text = "Term";
                     termComboBox.Items.Clear();
-                    termComboBox.Items.AddRange(new object[] { "Years", "Months" });
+                    termComboBox.Items.AddRange(["Years", "Months"]);
                     amount.Text = "Amount";
                     interest.Text = "Interest Rate";
                     scheduleComboBox.Items.Clear();
-                    scheduleComboBox.Items.AddRange(new object[] { "Annuity", "Differentiated" });
+                    scheduleComboBox.Items.AddRange(["Annuity", "Differentiated"]);
                     initialPayment.Text = "Initial Payment";
                     type.Text = "Payment Type";
                     earlyPayments.Text = "Early Payments";
@@ -272,11 +271,11 @@ namespace Ипотечный_калькулятор
                 case 2: // Español
                     term.Text = "Plazo";
                     termComboBox.Items.Clear();
-                    termComboBox.Items.AddRange(new object[] { "Años", "Meses" });
+                    termComboBox.Items.AddRange(["Años", "Meses"]);
                     amount.Text = "Monto";
                     interest.Text = "Tasa de interés";
                     scheduleComboBox.Items.Clear();
-                    scheduleComboBox.Items.AddRange(new object[] { "Anualidades", "Diferenciado" });
+                    scheduleComboBox.Items.AddRange(["Anualidades", "Diferenciado"]);
                     initialPayment.Text = "Pago inicial";
                     type.Text = "Tipo de pago";
                     earlyPayments.Text = "Pagos anticipados";
@@ -311,11 +310,11 @@ namespace Ипотечный_калькулятор
                 case 3: // Français
                     term.Text = "Durée";
                     termComboBox.Items.Clear();
-                    termComboBox.Items.AddRange(new object[] { "Ans", "Mois" });
+                    termComboBox.Items.AddRange(["Ans", "Mois"]);
                     amount.Text = "Montant";
                     interest.Text = "Taux d’intérêt";
                     scheduleComboBox.Items.Clear();
-                    scheduleComboBox.Items.AddRange(new object[] { "Annuités", "Différencié" });
+                    scheduleComboBox.Items.AddRange(["Annuités", "Différencié"]);
                     initialPayment.Text = "Acompte initial";
                     type.Text = "Type de paiement";
                     earlyPayments.Text = "Remboursements anticipés";
@@ -365,7 +364,7 @@ namespace Ипотечный_калькулятор
             {
                 try
                 {
-                    LoanExcelExporter.Export(loan, saveFileDialog.FileName);
+                    LoanExcelExporter.Export(loan, saveFileDialog.FileName, (HeaderMonth, HeaderPayment, HeaderInterest, HeaderPrincipal, HeaderRemaining, LabelTotal) );
                     MessageBox.Show("Файл успешно сохранен.", "Успех");
                 }
                 catch (Exception ex)

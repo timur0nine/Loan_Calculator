@@ -6,17 +6,17 @@ namespace LoanLogic
 {
     public static class LoanExcelExporter
     {
-        public static void Export(Loan loan, string filePath)
+        public static void Export(Loan loan, string filePath, (string, string, string, string, string, string) language)
         {
             using var workbook = new XLWorkbook();
             var worksheet = workbook.Worksheets.Add("График платежей");
 
             // Заголовки
-            worksheet.Cell(1, 1).Value = "Месяц";
-            worksheet.Cell(1, 2).Value = "Платеж";
-            worksheet.Cell(1, 3).Value = "Платеж по процентам";
-            worksheet.Cell(1, 4).Value = "Платеж в тело долга";
-            worksheet.Cell(1, 5).Value = "Остаток долга";
+            worksheet.Cell(1, 1).Value = language.Item1;
+            worksheet.Cell(1, 2).Value = language.Item2;
+            worksheet.Cell(1, 3).Value = language.Item3;
+            worksheet.Cell(1, 4).Value = language.Item4;
+            worksheet.Cell(1, 5).Value = language.Item5;
 
             // Стиль заголовков
             var headerRange = worksheet.Range(1, 1, 1, 5);
@@ -51,7 +51,7 @@ namespace LoanLogic
 
             // Итоги внизу
             int totalRow = iteration + 3;
-            worksheet.Cell(totalRow, 1).Value = "Итого:";
+            worksheet.Cell(totalRow, 1).Value = language.Item6;
             worksheet.Cell(totalRow, 2).Value = totalPayment;
             worksheet.Cell(totalRow, 3).Value = totalInterest;
             worksheet.Range(totalRow, 1, totalRow, 3).Style.Font.Bold = true;

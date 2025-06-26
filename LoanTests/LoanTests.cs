@@ -68,7 +68,6 @@ namespace LoanTests
             decimal remainingAfter12 = loan.Payouts[11, 4];
             Assert.AreEqual(0m, remainingAfter12, "Долг должен быть полностью погашен до окончания срока из-за досрочного платежа.");
 
-            // Дополнительно: можно проверить, что после досрочного платежа выплаты прекратились
             for (int i = 0; i < 12; i++)
             {
                 decimal monthNumber = loan.Payouts[i, 0];

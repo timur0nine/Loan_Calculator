@@ -23,14 +23,14 @@ namespace Ипотечный_калькулятор
             this.loan = loan;
             this.mainForm = form1;
 
-            this.Text = form1.Form2Title;
-            saveButton.Text = form1.ButtonSaveText;
-            backButton.Text = form1.ButtonBackText;
+            this.Text = Form1.Form2Title;
+            saveButton.Text = Form1.ButtonSaveText;
+            backButton.Text = Form1.ButtonBackText;
 
-            LoanDataGridView.Columns[0].HeaderText = form1.HeaderMonth;
-            LoanDataGridView.Columns[1].HeaderText = form1.HeaderPayment;
-            LoanDataGridView.Columns[2].HeaderText = form1.HeaderInterest;
-            LoanDataGridView.Columns[3].HeaderText = form1.HeaderRemaining;
+            LoanDataGridView.Columns[0].HeaderText = Form1.HeaderMonth;
+            LoanDataGridView.Columns[1].HeaderText = Form1.HeaderPayment;
+            LoanDataGridView.Columns[2].HeaderText = Form1.HeaderInterest;
+            LoanDataGridView.Columns[3].HeaderText = Form1.HeaderRemaining;
 
             FillLoanData();
 
